@@ -1,0 +1,16 @@
+Este proyecto es una agenda dde tareas, cada tarea tiene como atributos:
+ID, Titulo, Prioridad, Fecha, Etiquetas, Descripcion y un Marcador de Completada
+
+La agenda funciona sobre un diccionario de tareas que toma como keys los ID's de las tareas
+y como valor el objeto tarea, esto para optimizar los tiempos de busqueda, eliminar y agregar a la estructura.
+
+La CLI toma en cuenta unicamente comandos especificos que son los listados en los requerimientos del proyecto,
+asi como sus opciones y banderas. Cualquier mal uso al ejecutar el proyecto es hecho saber al usuario.
+
+Una nota sobre los ID's es que se decidio por usar la librerioa uuid de Python,
+ya que fue la solucion mas facil que se encontro para que los ID's de las tareas no se duplicaran 
+ni sobreescribieran. Otra opcion tambien hubiera sido almacenar la cantidad actual de tareas
+que tuviera el diccionario dentro del archivo JSON para asi, en cada ejecucion, retomar esta cuenta
+y evitar los ID's sobreescritoso duplicados.
+
+Este proyecto usa un archivo pyproject.toml como archivo que hace a este proyecto poder ejecutarse como un comando del sistma, es decir, se puede llamar a este proyecto simplemente con la palabra agenda.

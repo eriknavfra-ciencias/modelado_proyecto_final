@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+src/agenda.egg-info/PKG-INFO
+src/agenda.egg-info/SOURCES.txt
+src/agenda.egg-info/dependency_links.txt
+src/agenda.egg-info/entry_points.txt
+src/agenda.egg-info/top_level.txt
+tests/test_agenda.py

@@ -1,0 +1,184 @@
+{
+  "tareas": [
+    {
+      "id": "ea20f6c1-8c13-4743-bc1b-b62e0e4bc271",
+      "titulo": "Estudiar probabilidad",
+      "prioridad": 5,
+      "fecha": "2025-09-22",
+      "descripcion": "Repasar axiomas y resolver ejercicios de independencia",
+      "etiquetas": ["escuela"],
+      "completada": false
+    },
+    {
+      "id": "e225bb96-945a-41c5-9bfd-aa9f73be109c",
+      "titulo": "Visitar a la abuela",
+      "prioridad": 3,
+      "fecha": "2025-09-23",
+      "descripcion": "Llevarle pan y conversar un rato",
+      "etiquetas": ["familia", "social"],
+      "completada": false
+    },
+    {
+      "id": "ae80b208-1f12-46b3-a1f7-7343efcd2342",
+      "titulo": "Salir a correr",
+      "prioridad": 4,
+      "fecha": "2025-09-24",
+      "descripcion": "Correr 5 km en el parque",
+      "etiquetas": ["salud", "ocio"],
+      "completada": false
+    },
+    {
+      "id": "787db9f6-7f18-474b-8a2a-417b084ed5f8",
+      "titulo": "Limpiar la cocina",
+      "prioridad": 2,
+      "fecha": "2025-09-25",
+      "descripcion": "Lavar platos y organizar despensa",
+      "etiquetas": ["hogar"],
+      "completada": true
+    },
+    {
+      "id": "7a52cddc-f050-4210-b17b-17eae0af26e9",
+      "titulo": "Primer tarea",
+      "prioridad": 2,
+      "fecha": "2025-09-21",
+      "descripcion": "Prueba del funcionamiento correcto para la agenda",
+      "etiquetas": [],
+      "completada": false
+    },
+    {
+      "id": "93f4ef16-2e48-4aaf-aac0-79d159c70f4b",
+      "titulo": "Leer teoría de grafos",
+      "prioridad": 4,
+      "fecha": "2025-09-26",
+      "descripcion": "Repasar propiedades de grafos bipartitos",
+      "etiquetas": ["escuela"],
+      "completada": false
+    },
+    {
+      "id": "aeac3664-414b-43ab-875c-5ea7c24cd7e2",
+      "titulo": "Comprar frutas",
+      "prioridad": 1,
+      "fecha": "2025-09-27",
+      "descripcion": "Manzanas, plátanos y naranjas",
+      "etiquetas": ["hogar"],
+      "completada": true
+    },
+    {
+      "id": "8a2ca616-b987-451e-8b0f-fd13ac12bc7c",
+      "titulo": "Revisar frenos del coche",
+      "prioridad": 5,
+      "fecha": "2025-09-28",
+      "descripcion": "Llevar el coche al taller para revisión de seguridad",
+      "etiquetas": ["hogar"],
+      "completada": false
+    },
+    {
+      "id": "6078dd43-7992-4ae5-b7f0-b3abffd61669",
+      "titulo": "Preparar presentación",
+      "prioridad": 4,
+      "fecha": "2025-09-29",
+      "descripcion": "Diapositivas para la reunión del lunes",
+      "etiquetas": ["social"],
+      "completada": false
+    },
+    {
+      "id": "d4028eca-029e-4b6b-89a9-3861e46217f4",
+      "titulo": "Regar las plantas",
+      "prioridad": 2,
+      "fecha": "2025-09-30",
+      "descripcion": "Plantas del balcón y sala",
+      "etiquetas": ["hogar"],
+      "completada": true
+    },
+    {
+      "id": "a7643daa-8e8c-4c95-8842-8e71055e7398",
+      "titulo": "Estudiar topología",
+      "prioridad": 5,
+      "fecha": "2025-10-01",
+      "descripcion": "Revisar espacios métricos y abiertos",
+      "etiquetas": ["escuela"],
+      "completada": false
+    },
+    {
+      "id": "b2429aa4-4254-4182-82bc-a59a9a9afbc5",
+      "titulo": "Pagar servicios",
+      "prioridad": 3,
+      "fecha": "2025-10-02",
+      "descripcion": "Luz, agua e internet",
+      "etiquetas": ["hogar"],
+      "completada": true
+    },
+    {
+      "id": "3f294bbd-310f-4824-ba86-985f20f28df8",
+      "titulo": "Jugar ajedrez",
+      "prioridad": 2,
+      "fecha": "2025-10-03",
+      "descripcion": "Partida de práctica con un amigo",
+      "etiquetas": ["ocio"],
+      "completada": false
+    },
+    {
+      "id": "75a5e9bd-6d22-4278-83df-d700c23ca3b2",
+      "titulo": "Hacer ejercicio de matrices",
+      "prioridad": 4,
+      "fecha": "2025-10-04",
+      "descripcion": "Resolver problemas de álgebra lineal",
+      "etiquetas": ["escuela"],
+      "completada": false
+    },
+    {
+      "id": "13465297-4d05-4c41-a54b-6f9eedce7731",
+      "titulo": "Llamar al doctor",
+      "prioridad": 3,
+      "fecha": "2025-10-05",
+      "descripcion": "Agendar cita de revisión médica",
+      "etiquetas": ["salud"],
+      "completada": true
+    },
+    {
+      "id": "3cacc716-145c-432d-a0ee-248386eb832d",
+      "titulo": "Leer novela",
+      "prioridad": 1,
+      "fecha": "2025-10-06",
+      "descripcion": "Avanzar 3 capítulos del libro pendiente",
+      "etiquetas": ["ocio"],
+      "completada": false
+    },
+    {
+      "id": "49596bb4-2bd8-4f9c-b366-170e6f343fa5",
+      "titulo": "Escribir resumen",
+      "prioridad": 4,
+      "fecha": "2025-10-07",
+      "descripcion": "Resumen de la clase de sistemas discretos",
+      "etiquetas": ["escuela"],
+      "completada": false
+    },
+    {
+      "id": "c8e9fcb3-c431-4e9b-8de6-9c4abc11506c",
+      "titulo": "Ordenar escritorio",
+      "prioridad": 2,
+      "fecha": "2025-10-08",
+      "descripcion": "Clasificar papeles y limpiar superficie",
+      "etiquetas": ["hogar"],
+      "completada": true
+    },
+    {
+      "id": "be140400-2f8e-4d14-b51e-5aef3c67dbe2",
+      "titulo": "Revisar correo",
+      "prioridad": 3,
+      "fecha": "2025-10-09",
+      "descripcion": "Responder mensajes importantes",
+      "etiquetas": ["social"],
+      "completada": false
+    },
+    {
+      "id": "5fa21dd3-c8de-4158-85ac-19d5892ffd4e",
+      "titulo": "Planear viaje",
+      "prioridad": 5,
+      "fecha": "2025-10-10",
+      "descripcion": "Buscar vuelos y hospedaje",
+      "etiquetas": ["ocio", "familia"],
+      "completada": false
+    }
+  ]
+}
