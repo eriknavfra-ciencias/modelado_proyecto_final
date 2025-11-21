@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estado actual de la Agenda</title>
+    <link rel="stylesheet" href="{% static 'agenda/styles.css' %}">
+</head>
+<body>
+    <h1>Reporte de Tareas</h1>
+
+    <table>
+        <thead>
+            <tr><th colspan="6">Pendiente (14)</th></tr>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Prioridad</th>
+                <th>Etiquetas</th>
+                <th>Completada</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ea20f6c1-8c13-4743-bc1b-b62e0e4bc271</td>
+                <td>Estudiar probabilidad</td>
+                <td>Repasar axiomas y resolver ejercicios de independencia</td>
+                <td>5</td>
+                <td>escuela</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>8a2ca616-b987-451e-8b0f-fd13ac12bc7c</td>
+                <td>Revisar frenos del coche</td>
+                <td>Llevar el coche al taller para revisión de seguridad</td>
+                <td>5</td>
+                <td>hogar</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>a7643daa-8e8c-4c95-8842-8e71055e7398</td>
+                <td>Estudiar topología</td>
+                <td>Revisar espacios métricos y abiertos</td>
+                <td>5</td>
+                <td>escuela</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>5fa21dd3-c8de-4158-85ac-19d5892ffd4e</td>
+                <td>Planear viaje</td>
+                <td>Buscar vuelos y hospedaje</td>
+                <td>5</td>
+                <td>ocio, familia</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>ae80b208-1f12-46b3-a1f7-7343efcd2342</td>
+                <td>Salir a correr</td>
+                <td>Correr 5 km en el parque</td>
+                <td>4</td>
+                <td>salud, ocio</td>
+                <td>No</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr><th colspan="6">Completada (6)</th></tr>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Prioridad</th>
+                <th>Etiquetas</th>
+                <th>Completada</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>b2429aa4-4254-4182-82bc-a59a9a9afbc5</td>
+                <td>Pagar servicios</td>
+                <td>Luz, agua e internet</td>
+                <td>3</td>
+                <td>hogar</td>
+                <td>Sí</td>
+            </tr>
+            <tr>
+                <td>13465297-4d05-4c41-a54b-6f9eedce7731</td>
+                <td>Llamar al doctor</td>
+                <td>Agendar cita de revisión médica</td>
+                <td>3</td>
+                <td>salud</td>
+                <td>Sí</td>
+            </tr>
+            <tr>
+                <td>787db9f6-7f18-474b-8a2a-417b084ed5f8</td>
+                <td>Limpiar la cocina</td>
+                <td>Lavar platos y organizar despensa</td>
+                <td>2</td>
+                <td>hogar</td>
+                <td>Sí</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
