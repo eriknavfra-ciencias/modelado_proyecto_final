@@ -3,106 +3,109 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Estado actual de la Agenda</title>
+    <title>Agenda de Tareas</title>
     <link rel="stylesheet" href="{% static 'agenda/styles.css' %}">
+
+    <style>
+        .btn { 
+            padding: 5px 10px; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            font-family: sans-serif; 
+        }
+        .btn-listo { 
+            background-color: #28a745; 
+        } 
+        .btn-borrar { 
+            background-color: #dc3545; 
+        }   
+        .btn-agrega { 
+            background-color: #0852a2; 
+            padding: 10px 20px; 
+            font-size: 16px; 
+        }
+    </style>
 </head>
 <body>
-    <h1>Reporte de Tareas</h1>
+    <h1>Agenda de Tareas</h1>
+
+    <div style="text-align: center; margin-bottom: 25px; margin-top: 15px;">
+        <a href="{% url 'nueva_tarea' %}" class="btn btn-agrega">
+            Agregar nueva tarea
+        </a>
+    </div>
 
     <table>
         <thead>
-            <tr><th colspan="6">Pendiente (14)</th></tr>
+            <tr><th colspan="7" style="background-color: #e9ecef; color: #495057;">Tareas Pendientes</th></tr>
             <tr>
                 <th>ID</th>
                 <th>Título</th>
                 <th>Descripción</th>
                 <th>Prioridad</th>
                 <th>Etiquetas</th>
-                <th>Completada</th>
+                <th>Estado</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>ea20f6c1-8c13-4743-bc1b-b62e0e4bc271</td>
-                <td>Estudiar probabilidad</td>
-                <td>Repasar axiomas y resolver ejercicios de independencia</td>
-                <td>5</td>
-                <td>escuela</td>
-                <td>No</td>
-            </tr>
-            <tr>
-                <td>8a2ca616-b987-451e-8b0f-fd13ac12bc7c</td>
-                <td>Revisar frenos del coche</td>
-                <td>Llevar el coche al taller para revisión de seguridad</td>
-                <td>5</td>
-                <td>hogar</td>
-                <td>No</td>
-            </tr>
-            <tr>
-                <td>a7643daa-8e8c-4c95-8842-8e71055e7398</td>
-                <td>Estudiar topología</td>
-                <td>Revisar espacios métricos y abiertos</td>
-                <td>5</td>
-                <td>escuela</td>
-                <td>No</td>
-            </tr>
-            <tr>
-                <td>5fa21dd3-c8de-4158-85ac-19d5892ffd4e</td>
-                <td>Planear viaje</td>
-                <td>Buscar vuelos y hospedaje</td>
-                <td>5</td>
-                <td>ocio, familia</td>
-                <td>No</td>
-            </tr>
-            <tr>
-                <td>ae80b208-1f12-46b3-a1f7-7343efcd2342</td>
-                <td>Salir a correr</td>
-                <td>Correr 5 km en el parque</td>
-                <td>4</td>
-                <td>salud, ocio</td>
-                <td>No</td>
-            </tr>
+            {% for tarea in tareas %}
+                {% if not tarea.completada %}
+                <tr>
+                    <td>{{ tarea.id }}</td>
+                    <td><strong>{{ tarea.titulo }}</strong></td>
+                    <td>{{ tarea.descripcion }}</td>
+                    <td style="text-align: center;">{{ tarea.prioridad }}</td>
+                    <td>{{ tarea.etiquetas }}</td>
+                    <td>Pendiente</td>
+                    <td>
+                        <a href="{% url 'completar_tarea' tarea.id %}"><button class="btn btn-listo">Completada</button></a>
+                        <a href="{% url 'eliminar_tarea' tarea.id %}"><button class="btn btn-borrar">Borrar</button></a>
+                    </td>
+                </tr>
+                {% endif %}
+            {% empty %}
+                <tr><td colspan="7" style="padding: 20px; color: #6c757d;">No hay tareas pendientes.</td></tr>
+            {% endfor %}
         </tbody>
     </table>
 
+    <div style="margin-bottom: 40px;"></div>
+
     <table>
         <thead>
-            <tr><th colspan="6">Completada (6)</th></tr>
+            <tr><th colspan="7" style="background-color: #e9ecef; color: #495057;">Tareas Completadas</th></tr>
             <tr>
                 <th>ID</th>
                 <th>Título</th>
                 <th>Descripción</th>
                 <th>Prioridad</th>
                 <th>Etiquetas</th>
-                <th>Completada</th>
+                <th>Estado</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>b2429aa4-4254-4182-82bc-a59a9a9afbc5</td>
-                <td>Pagar servicios</td>
-                <td>Luz, agua e internet</td>
-                <td>3</td>
-                <td>hogar</td>
-                <td>Sí</td>
-            </tr>
-            <tr>
-                <td>13465297-4d05-4c41-a54b-6f9eedce7731</td>
-                <td>Llamar al doctor</td>
-                <td>Agendar cita de revisión médica</td>
-                <td>3</td>
-                <td>salud</td>
-                <td>Sí</td>
-            </tr>
-            <tr>
-                <td>787db9f6-7f18-474b-8a2a-417b084ed5f8</td>
-                <td>Limpiar la cocina</td>
-                <td>Lavar platos y organizar despensa</td>
-                <td>2</td>
-                <td>hogar</td>
-                <td>Sí</td>
-            </tr>
+            {% for tarea in tareas %}
+                {% if tarea.completada %}
+                <tr style="background-color: #f8f9fa; opacity: 0.8;">
+                    <td>{{ tarea.id }}</td>
+                    <td style="text-decoration: line-through;">{{ tarea.titulo }}</td>
+                    <td>{{ tarea.descripcion }}</td>
+                    <td style="text-align: center;">{{ tarea.prioridad }}</td>
+                    <td>{{ tarea.etiquetas }}</td>
+                    <td>Completada</td>
+                    <td>
+                        <a href="{% url 'eliminar_tarea' tarea.id %}"><button class="btn btn-borrar">Borrar</button></a>
+                    </td>
+                </tr>
+                {% endif %}
+            {% endfor %}
         </tbody>
     </table>
+
 </body>
 </html>
