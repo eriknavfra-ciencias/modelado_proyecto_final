@@ -80,5 +80,5 @@ El núcleo de la lógica se encuentra en la carpeta `agenda/`:
 * **agenda/urls.py**: Mapea las rutas web (`/nueva`, `/eliminar/<id>`) a sus vistas correspondientes.
 
 ## Ejemplos de ejecución
-![img.png](img.png)
-![img_1.png](img_1.png)
+![img_myp.png](img_myp.png)
+![img_myp2.png](img_myp2.png)
