@@ -1,88 +1,84 @@
-# 🗂️ Agenda – Gestion y Visualizacion de tareas en Agenda
+# 🗂️ Agenda Web – Gestión de Tareas con Django
 
-Este proyecto implementa una **agenda de tareas** en Python, accesible desde la terminal mediante el comando `agenda`.  
-Ademas, se puede generar un archivo html que visualiza en dos tablas (Pendientes/Completadas) las tareas ordenadas por 
-prioridad, incluyendo un contador de cuantas tareas hay de cada tipo.
+Este proyecto implementa una **agenda de tareas** en una aplicación web accesible desde el navegador.  
+El sistema permite crear, visualizar, completar y eliminar tareas, implementando el patrón de arquitectura **Modelo-Vista-Controlador (MVC)**.
+
 ---
 
 ## Requisitos
 
-- Python **3.12** (o la versión que estés usando en tu entorno)
+- Python **3.10** (o superior)
+- Django (se instala vía pip)
 - Entorno virtual venv
 
 ---
 
 ## Instalación
 
-python -m venv venv
-source venv/bin/activate
+1. Crear y activar entorno virtual:
+   python3 -m venv venv
+   source venv/bin/activate  
 
+2. Instalar dependencias:
+   pip install django
 
-Instalar dependencias:
-pip install -r requirements.txt
-
-Configura el proyecto como comando del sistema:
-pip install -e .
-Esto registrará el comando agenda en tu entorno virtual.
+3. Preparar la base de datos (Migraciones):
+   cd proyecto_final
+   python manage.py makemigrations
+   python manage.py migrate
 
 ## Uso
-Una vez instalado, puedes ejecutar:
-agenda --help
 
-## Comandos disponibles para la agenda
-+Agregar tarea:  
-    agenda add --titulo "Comprar pan" --descripcion "Ir a la panadería"
-    --prioridad 2 --fecha 2025-09-22 --etiquetas hogar
+Una vez instalado, inicia el servidor:
+python manage.py runserver
 
-+Listar tareas:  
-agenda ls --por prioridad
+Luego abre tu navegador en:
+http://127.0.0.1:8000/
 
-+Marcar tarea como completada:  
-    agenda done <ID_TAREA>
+## Acciones disponibles en la Web
++Creación de Tareas:  
+    Formulario validado para registrar tareas con título, prioridad (1-5), fecha límite, descripción y etiquetas.
 
-+Eliminar tarea:  
-    agenda rm <ID_TAREA>
++Organización Visual:  
+    Visualización automática en dos tablas separadas para tareas "Pendientes" y "Completadas".
 
-+Buscar tarea por texto:  
-    agenda find "panadería"
++Gestión de Estado:  
+    Botón verde "Completada" para marcar tareas como completadas con un solo clic.
 
-+Guardar agenda en archivo:  
-    agenda save demo.json
-
-+Cargar agenda desde archivo:  
-    agenda load demo.json
-
-## Comandos disponibles para general html
-+Comando para generar archivo index.html
-    python3 src/export_html.py <OPCIONAL:ruta_archivo_json (por default demo.json)> 
-+Para abrir el archivo index.html, abrir una pestania de Chrome, presionar Ctrl+o, buscar en la carpeta raiz del
-proyecto el archivo index.html y pulsar dos veces sobre el.
-
-## Ejemplos de ejecucion
-![img.png](img.png)
-![img_1.png](img_1.png)
++Limpieza (Eliminar):  
+    Botón rojo "Borrar" para eliminar permanentemente tareas de la base de datos (SQLite).
 
 ## Estructura del proyecto
-Código:   
-proyecto2_Navarrete_Franco/   
-├── src/   
-│   ├── agenda.py   
-│   ├── tarea.py   
-│   ├── io_json.py
-│   ├── export_html.py
-│   └── cli.py  
-├── tests/  
-│   ├── test_agenda.py  
-│   └── test_cli.py  
-├── requirements.txt  
-├── pyproject.toml
-├── index.html
-├── styles.css
-├── demo.json
-├── reporte.txt
+
+El repositorio separa el código web actual del historial de versiones anteriores:
+
+MODELADO_PROYECTO_FINAL/   
+├── proyecto_final/       
+│   ├── agenda/            (App Principal)
+│   │   ├── models.py      
+│   │   ├── views.py       
+│   │   ├── forms.py       
+│   │   ├── urls.py        
+│   │   └── templates/     
+│   ├── proyecto_final/   
+│   ├── manage.py
+│   └── db.sqlite3
+├── codigo_anterior/       
+│   └── src/
+├── venv/
 └── README.md  
 
-## Pruebas unitarias
-Ejecuta los tests con:  
-pytest
-# modelado_proyecto_final
+## Descripción técnica de archivos
+El núcleo de la lógica se encuentra en la carpeta `agenda/`:
+
+* **agenda/models.py**: Define la estructura de la BD. La clase `Tarea` incluye campos como título, prioridad, fecha, etiquetas y estado.
+* **agenda/views.py**: Controlador del negocio.
+    * `lista_tareas`: Renderiza la interfaz principal.
+    * `nueva_tarea`: Procesa y guarda el formulario.
+    * `completar_tarea` / `eliminar_tarea`: Acciones directas sobre la BD.
+* **agenda/forms.py**: Configura `TareaForm`, personaliza los widgets (calendario) y limpia etiquetas.
+* **agenda/urls.py**: Mapea las rutas web (`/nueva`, `/eliminar/<id>`) a sus vistas correspondientes.
+
+## Ejemplos de ejecución
+![img_myp.png](img_myp.png)
+![img_myp2.png](img_myp2.png)
