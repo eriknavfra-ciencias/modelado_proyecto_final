@@ -1,7 +1,7 @@
 # 🗂️ Agenda Web – Gestión de Tareas con Django
 
 Este proyecto implementa una **agenda de tareas** en una aplicación web accesible desde el navegador.  
-El sistema permite crear, visualizar, completar y eliminar tareas, implementando el patrón de arquitectura **Modelo-Vista-Plantilla (MVT)** de Django y cumpliendo con los estándares **PEP 8**.
+El sistema permite crear, visualizar, completar y eliminar tareas, implementando el patrón de arquitectura **Modelo-Vista-Controlador (MVC)**.
 
 ---
 
@@ -53,17 +53,17 @@ http://127.0.0.1:8000/
 El repositorio separa el código web actual del historial de versiones anteriores:
 
 MODELADO_PROYECTO_FINAL/   
-├── proyecto_final/        (Contenedor Web Django)
+├── proyecto_final/       
 │   ├── agenda/            (App Principal)
 │   │   ├── models.py      
 │   │   ├── views.py       
 │   │   ├── forms.py       
 │   │   ├── urls.py        
 │   │   └── templates/     
-│   ├── proyecto_final/    (Configuración Global)
+│   ├── proyecto_final/   
 │   ├── manage.py
 │   └── db.sqlite3
-├── codigo_anterior/       (Referencia CLI)
+├── codigo_anterior/       
 │   └── src/
 ├── venv/
 └── README.md  
